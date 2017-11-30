@@ -1,0 +1,71 @@
+
+<section>
+	<div>
+		<div class="container">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 maincontent" style="margin-top: 80px">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-bottom: 1px solid #dddddd; margin-bottom: 10px;">
+					<h1 class="pagehead">Search User </h1>
+					<div class="row">
+						<form [formGroup]="searchUserForm">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="form-group">
+									<label>User Name</label>
+									<input maxlength="45" type="text" placeholder=" User Name" class="form-control" name="" formControlName="username">
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="form-group">
+									<label>Phone Number</label>
+									<input maxlength="10" type="text" pattern="^\d{1,10}$" title="Numbers only" placeholder="Phone No" class="form-control" name="" formControlName="pharmacyPhone">
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<label class="hidden-xs">&nbsp;</label> <span class="input-group-btn">
+								<button class="btn btn-info searchbtn" type="submit">
+									Search <i class="glyphicon glyphicon-search"></i>
+								</button>
+							</span>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-9 col-md-6 col-sm-7 col-xs-12">
+					<h1 class="pagehead">List Of Users</h1>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="table-responsive">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+                                    <th>User Name</th>
+									<th>Name</th>
+									<th>Phone Number</th>
+									<th>Active</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let user of user_list">
+                                    <td>{{user.username}}</td>
+									<td>{{user.firstName}} {{user.lastName}}</td>
+									<td>{{user.phoneNumber}}</td>
+									<!-- <td *ngIf="user.active == 'True' || user.active == 'true'">
+										<ui-switch checked (click)="deactivate(user.id)"></ui-switch>
+									</td>
+									<td *ngIf="user.active == 'false' || user.active == 'False'">
+										<ui-switch reserved (click)="activate(user.id)"></ui-switch>
+									</td> -->
+									<td><ui-switch checked ></ui-switch></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ngIf closed -->
+</section>
